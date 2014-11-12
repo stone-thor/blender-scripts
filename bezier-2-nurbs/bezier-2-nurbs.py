@@ -56,7 +56,7 @@ def BezierToNurbs( pCurve ):
         nurbsSpline.resolution_v = 4
         nurbsSpline.use_smooth = True
 
-    ^# create actual object, put it to scene, select it
+    # create actual object, put it to scene, select it
     object = bpy.data.objects.new( 'BSpline'  + pCurve.data.name , curve)
     scene = bpy.context.scene
     scene.objects.link(object)
