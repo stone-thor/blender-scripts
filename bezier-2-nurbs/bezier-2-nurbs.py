@@ -9,10 +9,12 @@ def printWeights( pCurve ):
             print ( point.co[3] )
 
 
-# this function takes a bezier curve as an input creates an equivalent NURBS Curve. meaning the trajectory of the NURBS is the same as the bezier
-# it simply copies the vertex and its control points  of a bezier as vertices into a newly created NURB and sets it up accordingly 
+# this function takes a bezier curve as an input creates an equivalent NURBS Curve. 
+# meaning the trajectory of the NURBS is the same as the bezier
+# it simply copies the vertex and its control points of a bezier 
+# as vertices into a newly created NURB and sets it up accordingly 
 def BezierToNurbs( pCurve ):
-    # add if statement here like "if of type "Curve" => run this script, else dont
+    #TODO add if statement here like "if of type "Curve" => run this script, else dont
     print ("#######")
     
     curve = bpy.data.curves.new( 'BSpline_'  + pCurve.data.name , 'SURFACE' )
@@ -32,7 +34,7 @@ def BezierToNurbs( pCurve ):
             for valueIndex in range (0,3):
                 NURBSPoints[bezierPointIndex*3].co[valueIndex] = point.handle_left[valueIndex]
                 # set the "weight" of the control point
-                NURBSPoints[bezierPointIndex*3].co[3]=1.0 #REFACTOR: make somekind of "default weight" variable
+                NURBSPoints[bezierPointIndex*3].co[3]=1.0 #REFACTOR: make some kind of "default weight" variable
             for valueIndex in range (0,3):
                 NURBSPoints[bezierPointIndex*3+1].co[valueIndex] = point.co[valueIndex]
                 NURBSPoints[bezierPointIndex*3+1].co[3]=1.0
