@@ -11,7 +11,7 @@ def printWeights( pCurve ):
 
 # this function takes a bezier curve as an input creates an equivalent NURBS Curve. 
 # meaning the trajectory of the NURBS is the same as the bezier
-# it simply copies the vertex and its control points of a bezier 
+# it copies the vertex and its control points of a bezier 
 # as vertices into a newly created NURB and sets it up accordingly 
 def BezierToNurbs( pCurve ):
     #TODO add if statement here like "if of type "Curve" => run this script, else dont
